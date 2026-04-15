@@ -1,0 +1,43 @@
+# Java/Maven .gitignore
+
+# Compiled class files
+*.class
+
+# JAR files
+*.jar
+*.war
+*.ear
+*.nar
+
+# Maven build output
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# IDE files - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE files - Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# IDE files - VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+*.md
