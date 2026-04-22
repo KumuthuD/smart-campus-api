@@ -16,6 +16,11 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable exception) {
+        // IMPORTANT: Let JAX-RS standard errors (like 404, 400, 405) pass through normally
+        if (exception instanceof jakarta.ws.rs.WebApplicationException) {
+            return ((jakarta.ws.rs.WebApplicationException) exception).getResponse();
+        }
+
         // Log the full stack trace INTERNALLY (for developer debugging)
         LOGGER.log(Level.SEVERE, "Unexpected error occurred: " + exception.getMessage(), exception);
 

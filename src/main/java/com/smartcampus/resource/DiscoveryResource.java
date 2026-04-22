@@ -27,4 +27,11 @@ public class DiscoveryResource {
 
         return Response.ok(response).build();
     }
+    @GET
+    @Path("/crash")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response triggerCrash() {
+        // Deliberately throw an unhandled exception to demonstrate the GlobalExceptionMapper (500)
+        throw new RuntimeException("Simulated unexpected failure for demonstration purposes");
+    }
 }
