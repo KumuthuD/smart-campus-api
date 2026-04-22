@@ -1,9 +1,9 @@
 package com.smartcampus.exception;
 
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.ext.ExceptionMapper;
-import jakarta.ws.rs.ext.Provider;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -17,8 +17,8 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
     @Override
     public Response toResponse(Throwable exception) {
         // IMPORTANT: Let JAX-RS standard errors (like 404, 400, 405) pass through normally
-        if (exception instanceof jakarta.ws.rs.WebApplicationException) {
-            return ((jakarta.ws.rs.WebApplicationException) exception).getResponse();
+        if (exception instanceof javax.ws.rs.WebApplicationException) {
+            return ((javax.ws.rs.WebApplicationException) exception).getResponse();
         }
 
         // Log the full stack trace INTERNALLY (for developer debugging)
